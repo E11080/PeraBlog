@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    
+        
+    <servlet>
+        <servlet-name>Post</servlet-name>
+        <servlet-class>post.post</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Post</servlet-name>
+        <url-pattern>/post</url-pattern>
+    </servlet-mapping>
+     <servlet>
+        <servlet-name>home</servlet-name>
+        <servlet-class>post.goHome</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>home</servlet-name>
+        <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>send</servlet-name>
+        <servlet-class>map</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>send</servlet-name>
+        <url-pattern>/pos</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>comment</servlet-name>
+        <servlet-class>comment</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>comment</servlet-name>
+        <url-pattern>/comments</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>pending</servlet-name>
+        <servlet-class>pending</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>pending</servlet-name>
+        <url-pattern>/edite</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>allpost</servlet-name>
+        <servlet-class>allpost</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>allpost</servlet-name>
+        <url-pattern>/allpost</url-pattern>
+    </servlet-mapping>
+    	
+    <servlet>
+        <servlet-name>ok</servlet-name>
+        <servlet-class>commentOk</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ok</servlet-name>
+        <url-pattern>/ok</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>delete</servlet-name>
+        <servlet-class>commentDelete</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>delete</servlet-name>
+        <url-pattern>/delete</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>upPost</servlet-name>
+        <servlet-class>UpdatePost</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>upPost</servlet-name>
+        <url-pattern>/UpdatePost</url-pattern>
+    </servlet-mapping>
+    
+    
+    <Welcome-file-list>
+    <welcome>/index.jsp</welcome>
+     </Welcome-file-list>
+
+    
+    
+    <welcome-file-list>
+        <welcome-file>home</welcome-file>
+    </welcome-file-list>
+    
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>dush</web-resource-name>
+            <url-pattern>/Main.html</url-pattern>
+            <url-pattern>/edit.jsp</url-pattern>
+            <url-pattern>/editpost.jsp</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>admin</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <form-login-config>
+            <form-login-page>/login.jsp</form-login-page>
+            <form-error-page>/login-failed.jsp</form-error-page>
+        </form-login-config>
+    </login-config>
+</web-app>

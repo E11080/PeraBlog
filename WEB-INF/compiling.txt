@@ -1,0 +1,3 @@
+javac -cp lib/javax.servlet.jar src/login/*.java -d classes
+
+javac -cp lib/javax.servlet-api.jar;lib/minimal-json-0.9.1.jar src/*.java -d classes
